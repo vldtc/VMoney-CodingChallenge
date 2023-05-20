@@ -2,7 +2,7 @@ package com.example.vmoney_codingchallenge.domain.di
 
 import com.example.vmoney_codingchallenge.data.remote.ApiDetails
 import com.example.vmoney_codingchallenge.data.remote.ApiRequest
-import com.example.vmoney_codingchallenge.data.repository.RepoImpl
+import com.example.vmoney_codingchallenge.data.repository.RepoImplemented
 import com.example.vmoney_codingchallenge.data.repository.Repository
 import com.google.gson.Gson
 import dagger.Module
@@ -13,16 +13,15 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.create
 import javax.inject.Singleton
-
 
 @Module
 @InstallIn(SingletonComponent::class)
-class AppModule {
+class Module {
 
+    //Creating the OKHttpClient for interception
     @Provides
-    fun provideOkHttp(): OkHttpClient{
+    fun provideOkHttp(): OkHttpClient {
         return OkHttpClient.Builder()
             .addInterceptor(
                 HttpLoggingInterceptor().apply {
@@ -32,11 +31,12 @@ class AppModule {
             .build()
     }
 
+    //Creating the Retrofit client
     @Provides
     @Singleton
     fun provideRetrofit(
         provideOkHttpClient: OkHttpClient
-    ) : Retrofit {
+    ): Retrofit {
         return Retrofit.Builder()
             .baseUrl(ApiDetails.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create(Gson()))
@@ -44,18 +44,20 @@ class AppModule {
             .build()
     }
 
+    //Using Retrofit to get the API call
     @Provides
     fun provideApi(
         retrofit: Retrofit
-    ) : ApiRequest {
+    ): ApiRequest {
         return retrofit.create(ApiRequest::class.java)
     }
 
+    //Merging the repository class together
     @Provides
-    fun provideRepo(
+    fun provideRepository(
         apiRequest: ApiRequest
-    ): Repository{
-        return RepoImpl(apiRequest)
+    ): Repository {
+        return RepoImplemented(apiRequest)
     }
 
 }

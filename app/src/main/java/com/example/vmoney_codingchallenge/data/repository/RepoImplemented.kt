@@ -5,10 +5,9 @@ import com.example.vmoney_codingchallenge.data.model.rooms.RoomsItemModel
 import com.example.vmoney_codingchallenge.data.remote.ApiRequest
 import javax.inject.Inject
 
-class RepoImpl @Inject constructor(
+class RepoImplemented @Inject constructor(
     val apiRequest: ApiRequest
-) : Repository{
-
+): Repository{
     override suspend fun getPeople(): List<PeopleItemModel> = apiRequest.getPeople()
 
     override suspend fun getRooms(): List<RoomsItemModel> = apiRequest.getRooms()

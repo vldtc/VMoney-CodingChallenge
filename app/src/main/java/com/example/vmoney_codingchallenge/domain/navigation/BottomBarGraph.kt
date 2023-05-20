@@ -8,9 +8,8 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.example.vmoney_codingchallenge.ui.screens.NavigatorContent
-import com.example.vmoney_codingchallenge.ui.screens.PeopleContent
-import com.example.vmoney_codingchallenge.ui.screens.RoomsContent
+import com.example.vmoney_codingchallenge.ui.screens.people.PeopleScreen
+import com.example.vmoney_codingchallenge.ui.screens.RoomsScreen
 
 @Composable
 fun MainNavGraph(
@@ -20,14 +19,11 @@ fun MainNavGraph(
         navController = navController,
         startDestination = BottomBarScreen.People.route
     ){
-        composable(BottomBarScreen.Navigator.route){
-            NavigatorContent()
-        }
         composable(BottomBarScreen.People.route){
-            PeopleContent()
+            PeopleScreen()
         }
         composable(BottomBarScreen.Rooms.route){
-            RoomsContent()
+            RoomsScreen()
         }
     }
 }
@@ -37,13 +33,6 @@ sealed class BottomBarScreen(
     val title: String,
     val icon: ImageVector
 ){
-
-    object Navigator: BottomBarScreen(
-        route = "navigator",
-        title = "Navigator",
-        icon = Icons.Default.Home
-    )
-
     object People: BottomBarScreen(
         route = "people",
         title = "People",

@@ -1,7 +1,7 @@
 package com.example.vmoney_codingchallenge.ui.screens
 
+import android.annotation.SuppressLint
 import androidx.compose.material3.*
-import androidx.compose.material3.AlertDialogDefaults.containerColor
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.navigation.NavHostController
@@ -10,8 +10,9 @@ import androidx.navigation.compose.rememberNavController
 import com.example.vmoney_codingchallenge.domain.navigation.BottomBarScreen
 import com.example.vmoney_codingchallenge.domain.navigation.MainNavGraph
 
+@SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun NavigatorContent(
+fun NavigatorScreen(
     navController: NavHostController = rememberNavController()
 ) {
     Scaffold(
