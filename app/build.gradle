@@ -66,6 +66,8 @@ dependencies {
 
     //RETROFIT IMPLEMENTATION TO HANDLE THE API
     implementation "com.squareup.retrofit2:retrofit:2.9.0"
+
+    //OKHTTP LOGGIN INTERCEPTOR
     implementation "com.squareup.okhttp3:logging-interceptor:4.10.0"
 
     //GSON TO CONVERT

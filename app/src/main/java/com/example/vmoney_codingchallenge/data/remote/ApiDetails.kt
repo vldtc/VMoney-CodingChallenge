@@ -6,6 +6,8 @@ object ApiDetails {
 
     const val PEOPLE = "people"
 
+    const val PEOPLE_BY_ID = "people/{id}"
+
     const val ROOMS = "rooms"
 
 }
