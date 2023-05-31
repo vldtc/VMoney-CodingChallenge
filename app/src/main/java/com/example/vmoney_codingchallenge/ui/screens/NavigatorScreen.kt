@@ -51,7 +51,7 @@ fun BottomBar(
     ) {
         NavigationBar(
             modifier = Modifier
-                .height(50.dp),
+                .height(55.dp),
             containerColor = MaterialTheme.colorScheme.primary,
         ) {
             screens.forEach { screen ->

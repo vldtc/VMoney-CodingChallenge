@@ -2,11 +2,8 @@ package com.example.vmoney_codingchallenge.ui.screens.people
 
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
 import androidx.compose.animation.slideInVertically
 import androidx.compose.animation.slideOutVertically
 import androidx.compose.foundation.Image
@@ -20,7 +17,6 @@ import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentWidth
@@ -40,7 +36,6 @@ import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -62,7 +57,6 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import coil.compose.rememberAsyncImagePainter
 import com.example.vmoney_codingchallenge.data.model.people.PeopleItemModel
 import com.example.vmoney_codingchallenge.domain.navigation.ScreensNavigation
-import kotlinx.coroutines.delay
 
 @Composable
 fun PeopleScreen(
@@ -244,7 +238,7 @@ fun PeopleListContent(
     LazyColumn(
         modifier = Modifier
             .padding(horizontal = 16.dp)
-            .padding(bottom = 55.dp)
+            .padding(bottom = 60.dp)
     ) {
         items(peopleList.size) { index ->
             PersonCard(people = peopleList[index], onClick = onClick)

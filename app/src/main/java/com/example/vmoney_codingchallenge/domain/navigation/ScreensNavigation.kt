@@ -9,7 +9,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.example.vmoney_codingchallenge.ui.screens.people.PeopleScreen
-import com.example.vmoney_codingchallenge.ui.screens.RoomsScreen
+import com.example.vmoney_codingchallenge.ui.screens.rooms.RoomsScreen
 import com.example.vmoney_codingchallenge.ui.screens.people.details.PeopleDetailsScreen
 
 @Composable
